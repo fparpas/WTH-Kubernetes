@@ -1,0 +1,5 @@
+kubectl apply -f .
+
+kubectl exec -it content-web-77df99599f-ndpxw -- curl -s http://content-api:3001/speakers
+
+kubectl port-forwarding 10.0.133.47 3001

@@ -1,0 +1,1 @@
+kubectl exec -it mongodb-d8d7c5fd6-bqtmf -- mongosh "--version"

@@ -1,0 +1,16 @@
+az aks install-cli
+
+az aks get-credentials --resource-group Wth-DryRun --name wthaksdryrun
+
+# https://kubernetes.io/docs/concepts/configuration/organize-cluster-access-kubeconfig/
+kubectl config --help
+kubectl config get-contexts
+kubectl config use-context
+kubectl config current-context
+
+# https://learn.microsoft.com/en-us/azure/aks/availability-zones#verify-node-distribution-across-zones
+kubectl get nodes
+
+az aks show -g Wth-DryRun -n wthaksdryrun
+
+kubectl describe nodes | grep -e "Name:" -e "topology.kubernetes.io/zone"

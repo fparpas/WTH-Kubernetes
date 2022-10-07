@@ -1,0 +1,9 @@
+kubectl set image deployment/content-web content-web=whatthehackmsft/content-web:v2 
+kubectl set image deployment/content-api content-api=whatthehackmsft/content-api:v2 
+
+# Ensure image was updated
+kubectl get deployments -o wide
+
+# Rollback
+kubectl rollout undo deployment/content-web
+kubectl rollout undo deployment/content-api

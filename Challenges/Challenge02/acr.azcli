@@ -1,0 +1,25 @@
+# Azure CLI for ACR
+https://learn.microsoft.com/en-us/cli/azure/acr?view=azure-cli-latest#az-acr-import
+
+# Login and create subscription
+az login
+az account show
+az account list
+az account set -subscription "XXX"
+
+# Change subscription name with friendly name
+
+# Container Registry Import
+https://learn.microsoft.com/en-us/azure/container-registry/container-registry-import-images?tabs=azure-cli
+
+RESOURCEGROUP=Wth-DryRun
+ACRNAME=wthdryrunperf
+
+az acr list -g $RESOURCEGROUP
+
+az acr list
+
+az acr import --name wthdryrunperf --source docker.io/whatthehackmsft/content-web -t content-web --resource-group Wth-DryRun
+az acr import -n $ACRNAME --source docker.io/whatthehackmsft/content-api -t content-api --resource-group $RESOURCEGROUP
+
+az acr repository list -n $ACRNAME

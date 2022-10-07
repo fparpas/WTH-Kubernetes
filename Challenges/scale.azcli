@@ -1,0 +1,4 @@
+az aks nodepool scale --resource-group Wth-DryRun --cluster-name wthaksdryrun --name agentpool --node-count 1
+
+# Check for insufficient resources in not scheduled pods
+kubectl describe pod xxx
